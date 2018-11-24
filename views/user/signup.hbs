@@ -1,12 +1,12 @@
 <div class="row horizontal-align">
-    <div class="col-md-8 col-sm-12 col-lg-6">
+    <div class="col-md-8 col-sm-12 col-lg-5">
         <div class="card">
             <div class="card-body">
                 <h1>Sign Up</h1>
                 {{#if hasError}}
-                <div class="alert alert-danger">
+                <div class="card" style="background-color:#b00020">
                     {{# each messages}}
-                    <p>{{this}}</p>
+                    <div class="horizontal-align" style="color:#ffffff">{{this}}</div>
                     {{/each}}
                 </div>
                 {{/if}}

@@ -4,9 +4,9 @@
       <div class="card-body">
         <h1 style="">LOG IN </h1>
         {{#if hasError}}
-        <div class="alert alert-danger">
+        <div class="card alert alert-danger">
           {{# each messages}}
-          <p>{{this}}</p>
+          <div>{{this}}</div>
           {{/each}}
         </div>
         {{/if}}

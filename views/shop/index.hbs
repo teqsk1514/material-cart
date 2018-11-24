@@ -1,8 +1,10 @@
 <div>
     <div class="row horizontal-align">
         <div class="col-sm-6 col-md-4">
-            <div id="success" class="alert alert-success" {{# if noMessage}} hidden {{/if}}>
-                {{ successMsg}}
+            <div id="success" class="card alert alert-success" {{# if noMessage}} hidden {{/if}}>
+                <div class="card-body">
+                    {{ successMsg}}
+                </div>
             </div>
         </div>
     </div>
@@ -18,7 +20,8 @@
                         <p class="card-text description">{{this.description}}</p>
                         <div class="clear-fix">
                             <div class="price float-left"> {{ this.price }} </div>
-                            <a href="/add-to-cart/{{ this._id }}" class="btn btn-dark float-right"><i class="fas fa-cart-plus"></i></a>
+                            <a href="/add-to-cart/{{ this._id }}" class="btn btn-raised btn-success float-right"><i
+                                    class="fas fa-cart-plus"></i></a>
                         </div>
                     </div>
                 </div>

@@ -47,5 +47,6 @@ background: linear-gradient(to left, #243B55, #141E30); /* W3C, IE 10+/ Edge, Fi
 }
 
 .horizontal-align{
-  display: flex;justify-content: center;
+  display: flex;
+  justify-content: center;
 }
