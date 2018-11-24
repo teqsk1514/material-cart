@@ -1,0 +1,57 @@
+{{# if products }}
+<div>
+    <div style="margin-bottom:3rem;" class="card">
+        <div class="card-body">
+            <div class="row horizontal-align" style="margin-top:100px;">
+                <div class="col-lg-6 col-sm-6 col-md-4 ">
+                    <div class="card">
+                        <div style="background-color:#37474f;" class="card-body">
+                            <ul class="list-group">
+                                {{# each products }}
+                                <li class="list-group-item">
+                                    <strong style="color:aliceblue;">{{ this.item.title}}</strong>
+                                    <span style="margin-right:1rem" class="badge badge-success badge-pill">{{this.price}}</span>
+                                    <div class="btn-group">
+                                        <button class="btn btn-raised btn-warning btn-sm dropdown-toggle" type="button"
+                                            data-toggle="dropdown">Action
+                                            <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
+                                            <li><a class="dropdown-item" href="/remove/{{this.item._id}}">Remove All</a></li>
+                                    </div>
+                                    <span class="badge badge-dark" style="float:right">{{this.qty}}</span>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top:30px;">
+                <div class="col-sm-6 col-md-4 offset-4">
+                    <strong>Total: $ {{ totalPrice }}</strong>
+                </div>
+            </div>
+            <hr style="background:white">
+            <div class="row" style="margin-top:30px;">
+                <div class="col-sm-6 col-md-4 offset-4 ">
+                    <a href="/checkout"><button type="button" class="btn btn-raised btn-success">Checkout</button></a>
+                    <a href="/"><button type="button" class="btn btn-raised btn-info">Add more items</button></a>
+                    {{!-- <a href="/clear"><button type="button" class="btn btn-danger">Clear</button></a> --}}
+                </div>
+                <div class="col-sm-6 col-md-4 offset-4" style="margin-top:30px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ else }}
+<div class="card">
+    <div class="card-body">
+        <h1>No items in the cart</h1>
+        <a href="/"><button type="button" class="btn btn-raised btn-info">Add Items</button></a>
+    </div>
+</div>
+{{/if}}
