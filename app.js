@@ -20,10 +20,9 @@ var usersRouter = require('./routes/user');
 //connect to database.
 // mongoose.connect('mongodb://localhost:27017/shopping',{useNewUrlParser: true });
 
-mongoose.connect(<use your own mlab db>, { useNewUrlParser: true }, () => {
+mongoose.connect('mongodb://vrook:vrook1234@ds145438.mlab.com:45438/shopping', { useNewUrlParser: true }, () => {
   console.log('connected to mlab');
 });
-
 
 var app = express();
 
