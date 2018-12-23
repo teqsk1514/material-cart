@@ -21,7 +21,7 @@ var usersRouter = require('./routes/user');
 
 // mongoose.connect('mongodb://localhost:27017/shopping',{useNewUrlParser: true });
 
-mongoose.connect('mongodb://vrook:vrook1234@ds145438.mlab.com:45438/shopping', { useNewUrlParser: true }, () => {
+mongoose.connect(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@ds145438.mlab.com:45438/${process.env.MONGO_DB}`, { useNewUrlParser: true }, () => {
   console.log('connected to mlab');
 });
 var app = express();
